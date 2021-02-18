@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "practice-kotlin"
+version = "0.0.0"
+description = "Practice Kotlin"
+authors = ["seongtaek <hongseongtaek@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/SEONGTAEK01/practice-kotlin"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+djangorestframework = "^3.12.2"
+markdown = "^3.3.3"
+django-filter = "^2.4.0"
+django = "^3.1.6"
