@@ -2,7 +2,7 @@
 .env
 
 # Python
-server_django/.idea/*
-server_django/server_django/__pycache__/*
+.server_django/.idea/*
+.server_django/server_django/__pycache__/*
 .idea/*
 
