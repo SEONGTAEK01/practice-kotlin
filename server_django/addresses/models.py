@@ -9,5 +9,5 @@ class Addresses(models.Model):
     data_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['created']
+        ordering = ['data_created']
 
