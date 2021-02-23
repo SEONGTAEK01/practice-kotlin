@@ -37,7 +37,8 @@ def address(request, pk):
     if request.method == METHOD_GET:
         serializer = AddressesSerializer(obj)
         return JsonResponse(serializer.data, safe=False)
-    elif request.metod == METHOD_PUT:
+    # Update
+    elif request.method == METHOD_PUT:
         data = JSONParser().parse(request)
         serializer = AddressesSerializer(obj, data=data)
         return save_serializer(serializer)
