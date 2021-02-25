@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.urls import include
@@ -44,11 +45,11 @@ router.register(r'users', UserViewSet)
 # Wire up our API using automatic URL routing
 # Additionally, we include login URLs for the browsable API
 urlpatterns = [
-    path('', include(router.urls)),
+    url('^$', views.login_page),
+    path('login/', views.login),
     path('admin/', admin.site.urls),
-    path('api-auth/',
-         include('rest_framework.urls', namespace='rest_framework')),
     path('addresses/', views.address_list),
     path('addresses/<int:pk>/', views.address),
-    path('login/', views.login),
+    path('api-auth/',
+         include('rest_framework.urls', namespace='rest_framework')),
 ]

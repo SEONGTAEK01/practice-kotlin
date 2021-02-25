@@ -1,4 +1,5 @@
 from django.http import JsonResponse, HttpResponse
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 
@@ -50,9 +51,15 @@ def address(request, pk):
 @csrf_exempt
 def login(request):
     if request.method == METHOD_POST:
+        print(f"user_id: {request.POST.get('userid')}")
+        print(f"pwd: {request.POST.get('userpw')}")
         data = JSONParser.parse(request)
         obj = get_object_by_name(data)
         return compare_phone_number(obj.phone_number, data.get('phone_number'))
+
+
+def login_page(request):
+    return render(request, 'addresses/login.html')
 
 
 def compare_phone_number(in_phone_num, target_phone_num):
